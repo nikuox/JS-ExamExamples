@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .form {
+        height: 500px;
+        width: 560px;
+        background-color: lightblue;
+        border-radius: 5px;
+        margin: auto;
+        padding: 10px;
+      }
+      h1{
+        padding-top: 0px;
+      }
+
+       .input__top {
+        border-radius: 5px;
+        border: 1px solid lightblue;
+        outline: 1px solid lightblue;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .form .input__address{
+height: 30px;
+width: 100%;
+margin-bottom: 10px;
+border-radius: 5px;
+border: 1px solid lightblue;
+        outline: 1px solid lightblue;
+      }
+      .btn_submit{
+       outline: none;
+        background-color: gray;
+        color: white;
+        border-radius: 5px;
+        width: 70px;
+        height: 30px;
+      }
+
+      .circle{
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto;
+        padding-bottom: 50px;
+      }
+
+      .object1, .object2, .object3{
+        border-radius: 50%;
+        border:1px solid green;
+        width: 50px;
+        height: 50px;
+      }
+
+
+      .form2{
+        height: 500px;
+        width: 560px;
+        background-color: lightblue;
+        border-radius: 5px;
+        margin: auto;
+        padding: 10px;
+        display: none;
+      }
+
+      .form3{
+        height: 500px;
+        width: 560px;
+        background-color: lightblue;
+        border-radius: 5px;
+        margin: auto;
+        padding: 10px;
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="circle"><button class="object1"id="btnStep1"></button><button class="object2"id="btnStep2"></button><button class="object3"id="btnStep3"></button></div>
+    <div  class="form" id="detailStep1">
+        <h1> Form Example</h1>
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname" value="" class="input__top" />
+      <label for="lname" class="second__label">Last name:</label>
+      <input type="text" id="lname" name="lname" value="" class="input__top" />
+      <label for="email" >Email:</label>
+      <input type="text" id="email" name="email" value="" class="input__top"/>
+      <label for="number" class="second__label">Phone Number:</label>
+      <input type="text" id="number" name="number" value="" class="input__top"/>
+      <label for="address">Address: </label>
+      <input type="text" id="number" name="number" value="" class="input__address"/>
+      <label for="gender">Gender:</label><br></br>
+      <input type="radio" id="male" name="gender" value="male" />
+        <label for="html">Male</label>  
+      <input type="radio" id="female" name="gender" value="female" />  
+      <label for="css">female</label>
+       
+      <input type="radio" id="other" name="gender" value="other" />
+        <label for="javascript">Other</label> </br> </br>
+
+      <button onclick="goStep(2)" class="btn_submit">Next</button>
+    </div>
+
+    <div class="form2" id="detailStep2">
+      <label for="address">Leave a Comment: </label>
+      <input type="text" id="number" name="number" value="" class="input__address"/><br><br>
+      <button onclick="goStep(1)" class="btn_submit">Prev</button>
+      <button onclick="goStep(3)" class="btn_submit">Next</button>
+    </div>
+
+    <div class="form3" id="detailStep3">The End</div>
+
+
+
+    <script>
+     goStep(1)
+
+
+function goStep(num) {
+    if (num == 1) {
+        document.getElementById('detailStep1').style.display = 'block';
+        document.getElementById('detailStep2').style.display = 'none';
+        document.getElementById('detailStep3').style.display = 'none';
+        document.getElementById('btnStep1').style.backgroundColor = 'darkblue';
+        document.getElementById('btnStep1').style.color = 'white';
+        document.getElementById('btnStep2').style.backgroundColor = 'gray';
+        document.getElementById('btnStep2').style.color = 'white';
+        document.getElementById('btnStep3').style.backgroundColor = 'gray';
+        document.getElementById('btnStep3').style.color = 'white';
+    } else if (num == 2) {
+        document.getElementById('detailStep1').style.display = 'none';
+        document.getElementById('detailStep2').style.display = 'block';
+        document.getElementById('detailStep3').style.display = 'none';
+        document.getElementById('btnStep1').style.backgroundColor = 'green';
+        document.getElementById('btnStep1').style.color = 'white';
+        document.getElementById('btnStep2').style.backgroundColor = 'darkblue';
+        document.getElementById('btnStep2').style.color = 'white';
+        document.getElementById('btnStep3').style.backgroundColor = 'gray';
+        document.getElementById('btnStep3').style.color = 'white';
+    } else if (num == 3) {
+        document.getElementById('detailStep1').style.display = 'none';
+        document.getElementById('detailStep2').style.display = 'none';
+        document.getElementById('detailStep3').style.display = 'block';
+        document.getElementById('btnStep1').style.backgroundColor = 'green';
+        document.getElementById('btnStep1').style.color = 'white';
+        document.getElementById('btnStep2').style.backgroundColor = 'green';
+        document.getElementById('btnStep2').style.color = 'white';
+        document.getElementById('btnStep3').style.backgroundColor = 'darkblue';
+        document.getElementById('btnStep3').style.color = 'white';
+    }
+}
+    </script>
+  </body>
+</html>

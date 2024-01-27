@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .pointer {
+            border: 1px solid red;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body onkeydown="keyDownFn(event)">
+    <span class="pointer"></span>
+    <script>
+        let topPosition=0;
+        let leftPosition=0;
+        let keyDownFn = (e)=>{
+            console.log(e.key);
+            
+            if(e.key=='ArrowDown'){
+                topPosition+=10;
+            } else if(e.key == 'ArrowUp' && topPosition>0){
+                topPosition-=10;
+            }else if(e.key=='ArrowRight'){
+                leftPosition+=10;
+            } else if(e.key == 'ArrowLeft' && leftPosition>0){
+                leftPosition-=10;
+            }
+            
+            document.querySelector('.pointer').style.top=`${topPosition}px`   
+            document.querySelector('.pointer').style.left=`${leftPosition}px`   
+        }
+    </script>
+</body>
+</html>

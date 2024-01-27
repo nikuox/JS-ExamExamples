@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      #test {
+        border: 1px dashed yellow;
+        height: 40px;
+        width: 50px;
+        border-radius: 5px;
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+        color: yellow;
+        background-color: black;
+      }
+
+      .link {
+        border: 1px solid black;
+        height: 40px;
+        width: 100px;
+        border-radius: 5px;
+        margin: 20px auto;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .link a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo">
+      <p id="test"></p>
+    </div>
+    <div class="link">
+      <a href="https://www.w3schools.com/">click here!</a>
+    </div>
+
+    <script>
+      let remainTime = 10;
+      setInterval(function () {
+        document.getElementById("test").innerHTML = remainTime;
+        if (remainTime == 0) window.location.assign("https://www.google.com/");
+        remainTime -= 1;
+      }, 300);
+    </script>
+  </body>
+</html>

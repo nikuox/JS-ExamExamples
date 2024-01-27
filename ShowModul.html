@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #btn {
+        border: 1px solid blue;
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: aquamarine;
+        margin: 10px;
+        color: blue;
+      }
+      #modal {
+        border: 1px solid lightblue;
+        background-color: purple;
+        color: white;
+        width: 300px;
+        height: 200px;
+        position: fixed;
+        left: 30%;
+        top: 100px;
+        display: none;
+        text-align: center;
+        border-radius: 5px;
+      }
+
+      #close {
+        border: 1px solid blue;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: aquamarine;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn" onclick="showModal()">Click Me!</button>
+    <div id="modal">
+      Lorem ipsum dolor sit amet.
+      <button id="close" onclick="hideModal()">x</button>
+    </div>
+    <script>
+      let showModal = function () {
+        document.getElementById("modal").style.display = "block";
+      };
+      let hideModal = function () {
+        document.getElementById("modal").style.display = "none";
+      };
+    </script>
+  </body>
+</html>

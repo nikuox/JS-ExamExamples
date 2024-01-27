@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .slider {
+        margin: 20px auto;
+        display: flex;
+        overflow: hidden;
+        width: 600px;
+        border-radius: 2px;
+        position: relative;
+      }
+      .image {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+      .arrowL {
+        font-size: 50px;
+        top: 150px;
+        left: 10px;
+        color: white;
+        text-decoration: none;
+        position: absolute;
+        cursor: pointer;
+      }
+      .arrowR {
+        font-size: 50px;
+        top: 150px;
+        right: 10px;
+        color: white;
+        text-decoration: none;
+        position: absolute;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div style="width: 600px">
+        <img
+          src="https://picsum.photos/id/598/600/400"
+          class="active image"
+          alt=""
+        />
+        <img src="https://picsum.photos/id/642/600/400" class="image" />
+        <img src="https://picsum.photos/id/211/600/400" class="image" />
+      </div>
+      <span href="" class="left arrowL"><</span>
+      <span href="" class="right arrowR">></span>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".right").on("click", function () {
+          let current = $(".active");
+          let next = current.next();
+          if (next.length) {
+            current.removeClass("active");
+            next.addClass("active");
+          } else {
+            current.removeClass("active");
+            $(".image:first-child").addClass("active");
+          }
+        });
+        $(".left").on("click", function () {
+          let current = $(".active");
+          let prev = current.prev();
+          if (prev.length) {
+            current.removeClass("active");
+            prev.addClass("active");
+          } else {
+            current.removeClass("active");
+            $(".image:last-child").addClass("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

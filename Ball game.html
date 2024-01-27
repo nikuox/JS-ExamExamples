@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid red;
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        span {
+            top: 0;
+            left: 0;
+            position: absolute;
+            border: 1px solid blue;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            transition: 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div onmousemove="clickBtn(this,event)">
+        <span id="ci"></span>
+    </div>
+    
+ 
+    <script>
+        function clickBtn(element,e){
+            console.log(`x ${e.offsetX}`)
+            console.log(`y ${e.offsetY}`)
+            let spElement=document.getElementById('ci');
+            spElement.style.top=`${e.offsetY}px`
+            spElement.style.left=`${e.offsetX}px`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title"></h1>
+    <input type="text" id="fname" placeholder="first name">
+
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#fname').keyup(function(){
+                let fname=$('#fname').val();
+                $('#title').text(fname);
+            })
+        })
+    </script>
+</body>
+</html>

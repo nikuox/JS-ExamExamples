@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #demo {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+
+    </div>
+
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+
+        $(function () {
+            function generateRandom(min, max) {
+                return Math.floor((max - min) * Math.random()) + min;
+            }
+            function colorify() {
+                let color =`linear-gradient(270deg, rgb(${generateRandom(0, 255)},${generateRandom(0, 255)},${generateRandom(0, 255)}) 0%, rgb(${generateRandom(0, 255)},${generateRandom(0, 255)},${generateRandom(0, 255)}) 100%)`;
+                $('#demo').css('background', color);
+            }
+            setInterval(colorify,1000);
+        })
+    </script>
+</body>
+
+</html>
