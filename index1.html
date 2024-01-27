@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- string to array then reverse then string -->
+    <script>
+      let stds = "nikoo, samadi";
+      let stdArr = stds.split(",");
+      console.log(stdArr);
+      let stdReverse = stdArr.reverse();
+      console.log(stdReverse);
+      let text = stdReverse.toString();
+      console.log(text);
+
+      //   age with prompt
+
+      let age = Number(prompt("Enter Age"));
+      if (age < 14) {
+        alert("You can't vote.");
+      } else {
+        alert("you can vote.");
+      }
+
+      //odd and even
+
+      for (let i = 0; i < 10; i++) {
+        if (i % 2 == 0) {
+          console.log("even");
+        } else {
+          console.log("odd");
+        }
+      }
+
+      //object
+
+      let std1 = { fname: "nikoo", lname: "samadi", age: 25 };
+      console.log(std1);
+      console.log(typeof std1);
+      console.log(std1["fname"]);
+    </script>
+  </body>
+</html>
